@@ -1,6 +1,7 @@
-window.onload = function() {
-    const xhr = new XMLHttpRequest()
 
+window.onload = function() {
+
+    const xhr = new XMLHttpRequest()
 
     const contenedor = document.querySelector("#contenedor")
     
@@ -28,11 +29,11 @@ window.onload = function() {
     
     function busca(ev) {
         ev.preventDefault() // parar la respuesta por defecto del form
-    
+        console.log("entrando en función busca")
         const cuadro_entrada = document.querySelector("#criterios")  //Obtener el criterio de búsqueda
         const cadena_de_busqueda = cuadro_entrada.value
     
-        const url = `https://www.omdbapi.com/?apikey=d428236e=${cadena_de_busqueda}` //Hacer la llamada a la API
+        const url = `https://www.omdbapi.com/?apikey=d428236e&s=${cadena_de_busqueda}` //Hacer la llamada a la API
         xhr.open('GET', url, true)
         xhr.onload = procesaRespuesta
         xhr.send()
