@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Primeros pasos con JavaScript</h1>
+        <div id="contenedor"></div>
+
+        <button id="boton">CLIC</button>
+        <script>
+            const miboton = document.querySelector("#boton")
+            let contenedor = document.querySelector("#contenedor")
+            
+            // funcionalidad: con el DOM podemos tratear y generar dinámicamente nuestro HTML
+            // se pueden añadir clases dentro del parrafo, cambiar colores, etc
+            // nos permite dgenera dinámicamente HTML
+
+            var contador = 0
+            function gestorClick(ev){
+                // cada vez que hacemos click instanaciamos un nuevo parrafo
+                const parrafo = document.createElement("p")
+                // ++contador saldrá primero 1
+                parrafo.innerHTML = `soy el parrafo ${contador++}`
+                contenedor.appendChild(parrafo)
+            }
+            miboton.addEventListener("click", gestorClick)
+
+        </script>
+    </body>
+    </html>
