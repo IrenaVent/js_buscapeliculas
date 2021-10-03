@@ -12,6 +12,7 @@
 
         <button id="boton">CLIC</button>
         <script>
+            // accedemos al documento y con un selctor sacamos un control
             const miboton = document.querySelector("#boton")
             let contenedor = document.querySelector("#contenedor")
             
@@ -20,13 +21,15 @@
             // nos permite dgenera dinámicamente HTML
 
             var contador = 0
+            // como parámetro se le pasa el propio evento
             function gestorClick(ev){
-                // cada vez que hacemos click instanaciamos un nuevo parrafo
+                // cada vez que hacemos click instanaciamos un nuevo parrafo / selector css
                 const parrafo = document.createElement("p")
                 // ++contador saldrá primero 1
                 parrafo.innerHTML = `soy el parrafo ${contador++}`
                 contenedor.appendChild(parrafo)
             }
+            // para controla ponemos un escuchador de eventos, tipo de evento y pasamos función que se encarga de ese evento
             miboton.addEventListener("click", gestorClick)
 
         </script>
